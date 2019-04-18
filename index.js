@@ -14,12 +14,12 @@ const case2 = [
 // Expected output:
 // "KittenService, Ice, Cyberportal, Leetmeme, CamelCaser, Fraudstream"
 const case3 = [
-  "KittenService: ",
+  "Ice: Leetmeme", "KittenService: ",
   "Leetmeme: Cyberportal",
   "Cyberportal: Ice",
   "CamelCaser: KittenService",
   "Fraudstream: ",
-  "Ice: Leetmeme"
+  
 ];
 // Expected output:
 // "KittenService, Ice, Cyberportal, Leetmeme, CamelCaser, Fraudstream"
