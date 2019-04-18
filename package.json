@@ -1,0 +1,11 @@
+{
+  "name": "dep-res",
+  "version": "1.0.0",
+  "description": "Dependency resolver for coding challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Tyler Gregg",
+  "license": "ISC"
+}
