@@ -22,7 +22,14 @@ const case3 = [
   "Ice: Leetmeme"
 ];
 // Expected output:
-// "KittenService, Ice, Cyberportal, Leetmeme, CamelCaser, Fraudstream"
-console.log("case1: ", resolveDependencies(case1));
-console.log("case2: ", resolveDependencies(case2));
-console.log("case3: ", resolveDependencies(case3));
+// Error: circular dependencies via Leetmeme -> Cyberportal -> Ice -> Leetmeme
+// console.log("case1: ", resolveDependencies(case1));
+// console.log("case2: ", resolveDependencies(case2));
+// console.log("case3: ", resolveDependencies(case3));
+
+test("Most basic packages case", () => {
+  expect(resolveDependencies(case1)).toBe("CamelCaser, KittenService");
+  expect(resolveDependencies(case2)).toBe(
+    "KittenService, Ice, Cyberportal, Leetmeme, CamelCaser, Fraudstream"
+  );
+});
