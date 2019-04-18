@@ -37,6 +37,7 @@ const resolveDependencies = pkgs => {
 // returns a list of dependencies.  
 const checkDep = (pkg, packageMap, out = [], checkCirc = []) => {
   // if there is no dependent package, add pkg.name to out and return
+  // if(!pkg.name)
   if (!!!pkg.dependent) {
     out = [pkg.name, ...out];
     return out;
@@ -58,7 +59,10 @@ const checkDep = (pkg, packageMap, out = [], checkCirc = []) => {
   }
   // find the next package in the list to run through checkDep
   const nextPkg = packageMap.find(elt => elt.name === pkg.dependent);
-  // recursion with next package
+  // recursion with next package 
+  if(!nextPkg){
+    return `Error: Package '${pkg.dependent}' not found in package list`
+  }
   return checkDep(nextPkg, packageMap, out, checkCirc);
 };
 
