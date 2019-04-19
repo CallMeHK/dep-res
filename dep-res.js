@@ -37,13 +37,11 @@ const resolveDependencies = pkgs => {
 // returns a list of dependencies.  
 const checkDep = (pkg, packageMap, out = [], checkCirc = []) => {
   // if there is no dependent package, add pkg.name to out and return
-  // if(!pkg.name)
+  out = [pkg.name, ...out];
   if (!!!pkg.dependent) {
-    out = [pkg.name, ...out];
     return out;
   }
   // if there is a dependent package
-  out = [pkg.name, ...out];
   // check if the dependency is circular based on previous checkDep 
   const circVal = checkCirc.find(elt => elt.name === pkg.dependent);
   checkCirc = [...checkCirc, pkg];
